@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Centros" %>
+
+<h1>Centros</h1>
+
+<div id="centros">
+  <% @centros.each do |centro| %>
+    <%= render centro %>
+    <p>
+      <%= link_to "Show this centro", centro %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New centro", new_centro_path %>

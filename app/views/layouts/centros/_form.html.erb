@@ -1,0 +1,27 @@
+<%= form_with(model: centro) do |form| %>
+  <% if centro.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(centro.errors.count, "error") %> prohibited this centro from being saved:</h2>
+
+      <ul>
+        <% centro.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :clave, style: "display: block" %>
+    <%= form.text_field :clave %>
+  </div>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_area :nombre %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
